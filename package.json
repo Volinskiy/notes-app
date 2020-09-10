@@ -4,11 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "encore dev",
+    "build:watch": "encore dev --watch",
+    "build:production1": "set BUILD_MODE=production && encore production",
+    "dev": "set NODE_DEV_SERVER=true NODE_ENV=development && webpack-dev-server"
   },
   "author": "Borzov Sergey",
   "license": "ISC",
   "devDependencies": {
-    "@symfony/webpack-encore": "^0.30.2"
-  }
+    "@symfony/webpack-encore": "^0.30.2",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.1",
+    "svg-sprite-loader": "^5.0.0"
+  },
+  "dependencies": {}
 }
