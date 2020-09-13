@@ -98,7 +98,7 @@ webpackConf.devServer = {
     // publicPath: "http://localhost:8080",
     compress: true,
     hot: true,
-    port: 9012
+    port: 9014
 };
 
 module.exports = webpackConf;

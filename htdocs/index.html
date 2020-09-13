@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notice app</title>
+  <link rel="stylesheet" href="/assets/build/css/common.css" type="text/css">
+  <link rel="stylesheet" href="/assets/build/css/main.css" type="text/css">
 </head>
 <body>
-    <h1>Hello world</h1>
+  <header class="header">
+    <div class="wrapper">
+      <div class="header__top-row">
+        <h1>My notes</h1>
+        <button class="button header__button-add-new">+ Add new</button>
+        <div class="login-info">
+          <p class="login-info__is-logined">Logged in as example@elfsight.com</p>
+          <button class="login-info__logout">Logout</button>
+        </div>
+      </div>
+      <form action="" class="header__search-form">
+        <input class="header__search-string" type="text" placeholder="Search">
+      </form>
+    </div>  
+  </header>
+  <main class="main wrapper">
+    <article class="note-item">
+      <h2 class="note-item__header">Ligula commodo tincidunt pede sed at integer</h2>
+      <time class="note-item__time" datetime="2020-11-18">18 november 2020</time>
+      <div class="note-item__description">
+        <p class="note-item__text">Arcu sed platea id. Velit lacinia, a leo vehicula potenti duis aliquet nisl iaculis quis non dapibus
+          malesuada sodales quis ridiculus id quisque leo facilisis. Condimentum. Vestibulum
+          condimentum quisque</p>
+      </div>
+    </article>
+  </main>
+  <script src="/assets/build/js/common.js"></script>
+  <script src="/assets/build/js/main.js"></script>
 </body>
 </html>
