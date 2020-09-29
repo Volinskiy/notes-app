@@ -71,13 +71,13 @@ Encore
 
     .addPlugin(new SpriteLoaderPlugin({}))
 
-    .configureBabel(babelConf => {
-            babelConf.presets = [['@babel/preset-env', {
-                useBuiltIns: 'usage',
-                corejs: 3
-            }]];
-            babelConf.plugins = ['@babel/plugin-proposal-class-properties'];
-        });
+    // .configureBabel(babelConf => {
+    //         babelConf.presets = [['@babel/preset-env', {
+    //             useBuiltIns: 'usage',
+    //             corejs: 3
+    //         }]];
+    //         babelConf.plugins = ['@babel/plugin-proposal-class-properties'];
+    //     });
 
 if (IS_DEV_SERVER) {
     Encore

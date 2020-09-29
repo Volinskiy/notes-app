@@ -2,57 +2,111 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notice app</title>
-    <link rel="stylesheet" href="/assets/build/css/common.css" type="text/css">
-    <link rel="stylesheet" href="/assets/build/css/main.css" type="text/css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Notice app</title>
+	<link rel="stylesheet" href="/assets/build/css/common.css" type="text/css">
+	<link rel="stylesheet" href="/assets/build/css/main.css" type="text/css">
 </head>
-
 <body>
-    <header class="header">
-        <div class="wrapper">
-            <div class="header__top-row">
-                <h1>My notes</h1>
-                <button class="button header__button-add-new">+ Add new</button>
-                <div class="login-info">
-                    <p class="login-info__is-logined">Logged in as example@elfsight.com</p>
-                    <button class="login-info__logout">Logout</button>
-                </div>
-            </div>
-            <form action="" class="header__search-form">
-                <input class="header__search-string" type="text" placeholder="Search">
-            </form>
-        </div>
-    </header>
-    <main class="main wrapper">
-        <article class="note-item main__note-item">
-            <h2 class="note-item__header">Ligula commodo tincidunt pede sed at integer</h2>
-            <time class="note-item__time" datetime="2020-11-18">18 november 2020</time>
-            <div class="note-item__description">
-                <p class="note-item__text">Arcu sed platea id. Velit lacinia, a leo vehicula potenti duis aliquet nisl iaculis quis non dapibus malesuada sodales quis ridiculus id quisque leo facilisis. Condimentum. Vestibulum condimentum quisque</p>
-            </div>
-        </article>
-        <article class="note-item main__note-item">
-            <h2 class="note-item__header">Nascetur vestibulum pellentesque</h2>
-            <time class="note-item__time" datetime="2020-11-20">20 november 2020</time>
-            <div class="note-item__description">
-                <p class="note-item__text">Magna hymenaeos penatibus. Ipsum arcu lorem eleifend eu diam est sociis nisi malesuada. Nascetur vestibulum pellentesque parturient cum accumsan aenean massa dapibus eget phasellus integer. Donec montes. Turpis, sociosqu aptent. Primis
-                    commodo augue potenti...</p>
-            </div>
-        </article>
-        <article class="note-item main__note-item">
-            <h2 class="note-item__header">Ligula commodo tincidunt pede sed at integer</h2>
-            <time class="note-item__time" datetime="2020-11-30">30 november 2020</time>
-            <div class="note-item__description">
-                <p class="note-item__text">Erat, imperdiet morbi. Mi sodales facilisis curae; iaculis scelerisque ullamcorper sociis inceptos Velit ac nascetur venenatis a mattis posuere potenti sodales. Aptent habitasse eros tempus duis ullamcorper nisi sociis, hac. Fusce elementum.
-                    Inceptos imperdiet.</p>
-            </div>
-        </article>
-        <button class="button main__button-load-more">Load more</button>
-    </main>
-    <script src="/assets/build/js/common.js"></script>
-    <script src="/assets/build/js/main.js"></script>
+	<header class="header">
+		<div class="wrapper">
+			<div class="header__top-row">
+				<h1>My notes</h1>
+				<button class="button header__button-add-new jsButtonAddNew">+ Add new</button>
+				<div class="login-info">
+					<p class="login-info__is-logined">Logged in as example@asd.com</p>
+					<button class="login-info__logout">Logout</button>
+				</div>
+			</div>
+			<form action="" class="header__search-form">
+				<input class="header__search-string" id="searchString" type="text" placeholder="Search">
+			</form>
+		</div>
+	</header>
+	<main class="main wrapper">
+		<article class="note-item main__note-item">
+				<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
+				<h2 class="note-item__header">Ligula commodo tincidunt pede sed at integer</h2>
+				<time class="note-item__time" datetime="2020-11-18">18 november 2020</time>
+				<div class="note-item__description">
+						<p class="note-item__text">Arcu sed platea id. Velit lacinia, a leo vehicula potenti duis aliquet nisl iaculis quis non dapibus malesuada sodales quis ridiculus id quisque leo facilisis. Condimentum. Vestibulum condimentum quisque</p>
+				</div>
+		</article>
+		<article class="note-item main__note-item">
+				<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
+				<h2 class="note-item__header">Nascetur vestibulum pellentesque</h2>
+				<time class="note-item__time" datetime="2020-11-20">20 november 2020</time>
+				<div class="note-item__description">
+						<p class="note-item__text">Magna hymenaeos penatibus. Ipsum arcu lorem eleifend eu diam est sociis nisi malesuada. Nascetur vestibulum pellentesque parturient cum accumsan aenean massa dapibus eget phasellus integer. Donec montes. Turpis, sociosqu aptent. Primis commodo augue potenti...</p>
+				</div>
+		</article>
+		<article class="note-item main__note-item">
+				<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
+				<h2 class="note-item__header">Ligula commodo tincidunt pede sed at integer</h2>
+				<time class="note-item__time" datetime="2020-11-30">30 november 2020</time>
+				<div class="note-item__description">
+						<p class="note-item__text">Erat, imperdiet morbi. Mi sodales facilisis curae; iaculis scelerisque ullamcorper sociis inceptos Velit ac nascetur venenatis a mattis posuere potenti sodales. Aptent habitasse eros tempus duis ullamcorper nisi sociis, hac. Fusce elementum. Inceptos imperdiet.</p>
+				</div>
+		</article>
+		<article class="note-item main__note-item">
+			<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
+			<h2 class="note-item__header">Nascetur vestibulum pellentesque</h2>
+			<time class="note-item__time" datetime="2020-11-20">20 november 2020</time>
+			<div class="note-item__description">
+					<p class="note-item__text">Magna hymenaeos penatibus. Ipsum arcu lorem eleifend eu diam est sociis nisi malesuada. Nascetur vestibulum pellentesque parturient cum accumsan aenean massa dapibus eget phasellus integer. Donec montes. Turpis, sociosqu aptent. Primis commodo augue potenti...</p>
+			</div>
+		</article>
+		<article class="note-item main__note-item">
+			<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
+			<h2 class="note-item__header">Nascetur vestibulum pellentesque</h2>
+			<time class="note-item__time" datetime="2020-11-20">20 november 2020</time>
+			<div class="note-item__description">
+					<p class="note-item__text">Magna hymenaeos penatibus. Ipsum arcu lorem eleifend eu diam est sociis nisi malesuada. Nascetur vestibulum pellentesque parturient cum accumsan aenean massa dapibus eget phasellus integer. Donec montes. Turpis, sociosqu aptent. Primis commodo augue potenti...</p>
+			</div>
+		</article>
+		<article class="note-item main__note-item">
+			<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
+			<h2 class="note-item__header">Nascetur vestibulum pellentesque</h2>
+			<time class="note-item__time" datetime="2020-11-20">20 november 2020</time>
+			<div class="note-item__description">
+					<p class="note-item__text">Magna hymenaeos penatibus. Ipsum arcu lorem eleifend eu diam est sociis nisi malesuada. Nascetur vestibulum pellentesque parturient cum accumsan aenean massa dapibus eget phasellus integer. Donec montes. Turpis, sociosqu aptent. Primis commodo augue potenti...</p>
+			</div>
+		</article>
+		<article class="note-item main__note-item">
+			<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
+			<h2 class="note-item__header">Nascetur vestibulum pellentesque</h2>
+			<time class="note-item__time" datetime="2020-11-20">20 november 2020</time>
+			<div class="note-item__description">
+					<p class="note-item__text">Magna hymenaeos penatibus. Ipsum arcu lorem eleifend eu diam est sociis nisi malesuada. Nascetur vestibulum pellentesque parturient cum accumsan aenean massa dapibus eget phasellus integer. Donec montes. Turpis, sociosqu aptent. Primis commodo augue potenti...</p>
+			</div>
+		</article>
+		<article class="note-item main__note-item">
+			<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
+			<h2 class="note-item__header">Nascetur vestibulum pellentesque</h2>
+			<time class="note-item__time" datetime="2020-11-20">20 november 2020</time>
+			<div class="note-item__description">
+				<p class="note-item__text">Magna hymenaeos penatibus. Ipsum arcu lorem eleifend eu diam est sociis nisi malesuada. Nascetur vestibulum pellentesque parturient cum accumsan aenean massa dapibus eget phasellus integer. Donec montes. Turpis, sociosqu aptent. Primis commodo augue potenti...</p>
+			</div>
+		</article>
+		
+		<button class="button main__button-load-more jsButtonLoadMore">Load more</button>
+		
+		<div class="pop-up display-none">
+			<div class="pop-up__window">
+				<h3 class="pop-up__header">Добавление заметки</h3>
+				<label for="pop-up-header" class="pop-up__note-header-label">Название заметки</label>
+				<input class="pop-up__note-header" type="text" name="" id="pop-up-header">
+				<label for="pop-up-description" class="pop-up__note-description-label">Текст заметки</label>
+				<textarea name="" id="pop-up-description" class="pop-up__note-description"></textarea>
+				<button class="button pop-up__button-send">Отправить</button>
+				<button class="button button--close pop-up__button-close jsButtonClosePopUp"></button>
+			</div>
+		</div>
+	</main>
+	<button class="button header__button-add-new jsButtonAddNew">+ Add new</button>
+	<script src="/assets/build/js/common.js"></script>
+	<script src="/assets/build/js/main.js"></script>
 </body>
 
 </html>

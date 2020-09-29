@@ -1,6 +1,21 @@
 
 .note-item {
+  position: relative;
 
+  &__button-delete {
+    @button-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: @button-size;
+    height: @button-size;
+    border-radius: @button-size;
+
+    &:hover {
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+  }
   &__header {
     font-weight: 400;
     font-size: 24px;
