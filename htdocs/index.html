@@ -13,7 +13,7 @@
 		<div class="wrapper">
 			<div class="header__top-row">
 				<h1>My notes</h1>
-				<button class="button header__button-add-new jsButtonAddNew">+ Add new</button>
+				<button class="button header__button-add-new jsButtonOpenPopUpAddNote">+ Add new</button>
 				<div class="login-info">
 					<p class="login-info__is-logined">Logged in as example@asd.com</p>
 					<button class="login-info__logout">Logout</button>
@@ -96,14 +96,14 @@
 		<button class="button main__button-load-more jsButtonLoadMore">Load more</button>
 		
 		<div class="pop-up display-none">
-			<form class="pop-up__window">
+			<form class="pop-up__window jsFormAddNote" action="">
 				<h3 class="pop-up__header">Добавление заметки</h3>
 				<label for="pop-up-header" class="pop-up__note-header-label">Название заметки</label>
-				<input class="pop-up__note-header" type="text" name="" id="pop-up-header">
+				<input class="pop-up__note-header" type="text" name="noteHeader" id="pop-up-header">
 				<label for="pop-up-description" class="pop-up__note-description-label">Текст заметки</label>
-				<textarea name="" id="pop-up-description" class="pop-up__note-description"></textarea>
-				<button class="button pop-up__button-send">Отправить</button>
-				<button class="button button--close pop-up__button-close jsButtonClosePopUp"></button>
+				<textarea name="noteDescription" id="pop-up-description" class="pop-up__note-description"></textarea>
+				<button class="button pop-up__button-send" type="submit">Отправить</button>
+				<button class="button button--close pop-up__button-close jsButtonClosePopUp" type="button"></button>
 			</form>
 		</div>
 	</main>
