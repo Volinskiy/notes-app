@@ -74,7 +74,7 @@ Encore
     // .configureBabel(babelConf => {
     //         babelConf.presets = [['@babel/preset-env', {
     //             useBuiltIns: 'usage',
-    //             corejs: 3
+    //             corejs: 4
     //         }]];
     //         babelConf.plugins = ['@babel/plugin-proposal-class-properties'];
     //     });
@@ -98,7 +98,7 @@ webpackConf.devServer = {
     // publicPath: "http://localhost:8080",
     compress: true,
     hot: true,
-    port: 9014
+    port: 9012
 };
 
 module.exports = webpackConf;
