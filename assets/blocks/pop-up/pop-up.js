@@ -1,4 +1,5 @@
 import './pop-up.less';
+import NotesHeandler from '../../modules/notesHeandler';
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -10,25 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     }
 
-    let buttonClosePopUp = document.querySelector('.jsButtonClosePopUp');
+    let popUpAddNote = document.querySelector('.jsPopUpAddNote');
     
-    buttonClosePopUp.addEventListener('click', () => {
-      closePopUp();
+    popUpAddNote.addEventListener('click', (e) => {
+      if (e.target.classList.contains('jsButtonClosePopUp') || e.target.classList.contains('jsPopUpAddNote')){
+        closePopUp();
+      }
     })
     
-    let formAddNote = document.querySelector('.jsFormAddNote');
+    let formAddNote = document.forms.formAddNote;
 
     formAddNote.addEventListener('submit', (e) => {
       e.preventDefault();
-      console.log('hy');
       closePopUp();
+      let note = {
+                  "header": formAddNote.elements.noteHeader.value,
+                  "date": new Date(),
+                  "description":  formAddNote.elements.noteDescription.value
+                 }
+      
+      let notesHeandler = new NotesHeandler('.jsNotes');
+      
+      notesHeandler.addNote(note);
     })
-
-
-    function toggleOverflow() {
-      let bodyBlock = document.querySelector('body');
-      bodyBlock.classList.toggle('overflow');
-    }
 
     function openPopUp() {
       toggleOverflow()
@@ -42,9 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
       popUpWindow.classList.add('display-none');
     }
 
-    // buttonAddNew.addEventListener('click', () => {
-    //   openPopUp();
-    // })
+    function toggleOverflow() {
+      let bodyBlock = document.querySelector('body');
+      bodyBlock.classList.toggle('overflow');
+    }
 
 
 })

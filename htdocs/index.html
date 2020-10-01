@@ -25,7 +25,7 @@
 		</div>
 	</header>
 	<main class="main wrapper jsMain">
-		<section class="main__articles-section jsArticles">
+		<section class="main__notes-section jsNotes">
 
 			<article class="note-item main__note-item">
 					<button class="note-item__button-delete button--close button jsButtonDeleteNote"></button>
@@ -95,8 +95,8 @@
 		
 		<button class="button main__button-load-more jsButtonLoadMore">Load more</button>
 		
-		<div class="pop-up display-none">
-			<form class="pop-up__window jsFormAddNote" action="">
+		<div class="pop-up display-none jsPopUpAddNote">
+			<form class="pop-up__window jsFormAddNote" action="" name="formAddNote">
 				<h3 class="pop-up__header">Добавление заметки</h3>
 				<label for="pop-up-header" class="pop-up__note-header-label">Название заметки</label>
 				<input class="pop-up__note-header" type="text" name="noteHeader" id="pop-up-header">
