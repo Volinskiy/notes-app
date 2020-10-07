@@ -11,24 +11,35 @@
 <body>
 	<header class="header">
 		<div class="wrapper">
-			<h1>World</h1>
 			<div class="header__top-row">
-<<<<<<< HEAD
-				<h1>My notes master</h1>
-=======
-				<h1>My notes testConflicktThird</h1>
->>>>>>> testConflicktThird
+				<h1>My notes</h1>
 				<button class="button header__button-add-new jsButtonOpenPopUpAddNote">+ Add new</button>
-				<div class="login-info">
+				<div class="login-info header__login-info">
 					<p class="login-info__is-logined">Logged in as example@asd.com</p>
 					<button class="login-info__logout">Logout</button>
 				</div>
 			</div>
-			<form action="" class="header__search-form">
-				<input class="header__search-string" id="searchString" type="text" placeholder="Search">
-			</form>
+			<div class="header__bottom-row">
+				<nav class="main-nav header__main-nav jsMainMenu">
+					<ul class="main-nav__list display-none jsMainMenuList">
+						<li class="main-nav__item"><a href="#" class="main-nav__link">Пункт меню 1</a></li>
+						<li class="main-nav__item"><a href="#" class="main-nav__link">Пункт меню 2</a></li>
+						<li class="main-nav__item"><a href="#" class="main-nav__link">Пункт меню 3</a></li>
+						<li class="main-nav__item"><a href="#" class="main-nav__link">Пункт меню 4</a></li>
+						<li class="main-nav__item"><a href="#" class="main-nav__link">Пункт меню 5</a></li>
+						<li class="main-nav__item"><a href="#" class="main-nav__link">Пункт меню 6</a></li>
+						<li class="main-nav__item"><a href="#" class="main-nav__link">Пункт меню 7</a></li>
+						<li class="main-nav__item"><a href="#" class="main-nav__link">Пункт меню 8</a></li>
+					</ul>
+					<button class="main-nav__burger-button jsButtonBurger">
+						<span class="main-nav__burger-line"></span>
+					</button>
+				</nav>
+				<form action="" class="header__search-form">
+					<input class="header__search-string" id="searchString" type="text" placeholder="Search">
+				</form>
+			</div>
 		</div>
-		<h2>Hwllo</h2>
 	</header>
 	<main class="main wrapper jsMain">
 		<section class="main__notes-section jsNotes">
@@ -102,7 +113,7 @@
 		<button class="button main__button-load-more jsButtonLoadMore">Load more</button>
 		
 		<div class="pop-up display-none jsPopUpAddNote">
-			<form class="pop-up__window jsFormAddNote" action="" name="formAddNote">
+			<form class="pop-up__form jsFormAddNote" action="" name="formAddNote">
 				<h3 class="pop-up__header">Добавление заметки</h3>
 				<label for="pop-up-header" class="pop-up__note-header-label">Название заметки</label>
 				<input class="pop-up__note-header" type="text" name="noteHeader" id="pop-up-header">

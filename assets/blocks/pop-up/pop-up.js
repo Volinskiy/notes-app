@@ -1,58 +1,58 @@
 import './pop-up.less';
 import NotesHeandler from '../../modules/notesHeandler';
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    let buttonOpenPopUpAddNote = document.querySelectorAll('.jsButtonOpenPopUpAddNote');
-    
-    for (let btn of buttonOpenPopUpAddNote){
-      btn.addEventListener('click', () => {
-        openPopUp();
-      })
+export default class PopUpAddNote extends NotesHeandler {
+  constructor(){
+    super('.jsNotes');
+    this.buttonOpenPopUpAddNote = document.querySelector('.jsButtonOpenPopUpAddNote');
+    this.popUp = document.querySelector('.jsPopUpAddNote');
+    this.formAddNote = document.forms.formAddNote;
+    this.buttonClosePopUp = this.formAddNote.querySelector('.jsButtonClosePopUp');
+    this.bodyBlock = document.querySelector('body');
+    this.initEventHandlers();
+  }
+
+  openPopUp() {
+    this.toggleOverflow();
+    this.popUp.classList.remove('display-none');
+  }
+
+  closePopUp() {
+    this.toggleOverflow();
+    this.popUp.classList.add('display-none');
+  }
+
+  togglePopUp() {
+    if (this.popUp.classList.contains('display-none')){
+      this.openPopUp()
+    } else {
+      this.closePopUp()
     }
-
-    let popUpAddNote = document.querySelector('.jsPopUpAddNote');
-    
-    popUpAddNote.addEventListener('click', (e) => {
-      if (e.target.classList.contains('jsButtonClosePopUp') || e.target.classList.contains('jsPopUpAddNote')){
-        closePopUp();
-      }
-    })
-    
-    let formAddNote = document.forms.formAddNote;
-
-    formAddNote.addEventListener('submit', (e) => {
+  }
+  
+  toggleOverflow() {
+    this.bodyBlock.classList.toggle('overflow');
+  }
+  
+  initEventHandlers(){
+    this.buttonOpenPopUpAddNote.addEventListener('click', () => {
+      this.togglePopUp();
+    });
+    this.buttonClosePopUp.addEventListener('click', () => {
+      this.closePopUp();
+    });
+    this.formAddNote.addEventListener('submit', (e) => {
       e.preventDefault();
-      closePopUp();
+      this.closePopUp();
       let note = {
                   "header": formAddNote.elements.noteHeader.value,
                   "date": new Date(),
                   "description":  formAddNote.elements.noteDescription.value
                  }
       
-      let notesHeandler = new NotesHeandler('.jsNotes');
-      
-      notesHeandler.addNote(note);
+      this.addNote(note);
     })
-
-    function openPopUp() {
-      toggleOverflow()
-      let popUpWindow = document.querySelector('.pop-up');
-      popUpWindow.classList.remove('display-none');
-    }
-
-    function closePopUp() {
-      toggleOverflow()
-      let popUpWindow = document.querySelector('.pop-up');
-      popUpWindow.classList.add('display-none');
-    }
-
-    function toggleOverflow() {
-      let bodyBlock = document.querySelector('body');
-      bodyBlock.classList.toggle('overflow');
-    }
-
-
-})
+  }
+}
 
 
