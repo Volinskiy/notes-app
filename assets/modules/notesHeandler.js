@@ -1,7 +1,9 @@
+import CallbackTools from './callbackTools.js';
 
-export default class NotesHeandler
+export default class NotesHeandler extends CallbackTools
 {
   constructor(blockNotesSelector) {
+    super();
     this.blockNotes = document.querySelector(blockNotesSelector);
   }
 

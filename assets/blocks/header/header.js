@@ -8,4 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let mainMenu = new MainMenu();
   let popUpAddNote = new PopUpAddNote();
   
+  popUpAddNote.addCallback('afterOpen', () => {
+    mainMenu.closeMenu();
+  })
 })

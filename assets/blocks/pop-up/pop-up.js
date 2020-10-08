@@ -15,6 +15,7 @@ export default class PopUpAddNote extends NotesHeandler {
   openPopUp() {
     this.toggleOverflow();
     this.popUp.classList.remove('display-none');
+    this.executeCallbackList('afterOpen');
   }
 
   closePopUp() {
@@ -22,8 +23,13 @@ export default class PopUpAddNote extends NotesHeandler {
     this.popUp.classList.add('display-none');
   }
 
+  isOpen() {
+    if (this.popUp.classList.contains('display-none')) return false;
+    return true;
+  }
+
   togglePopUp() {
-    if (this.popUp.classList.contains('display-none')){
+    if (!this.isOpen()){
       this.openPopUp()
     } else {
       this.closePopUp()
@@ -35,7 +41,9 @@ export default class PopUpAddNote extends NotesHeandler {
   }
   
   initEventHandlers(){
-    this.buttonOpenPopUpAddNote.addEventListener('click', () => {
+    this.buttonOpenPopUpAddNote.addEventListener('click', (e) => {
+      // Останавливаем всплытия, чтобы клик по кнопке открытия pop-up не закрывал pop-up
+      e.stopPropagation();
       this.togglePopUp();
     });
     this.buttonClosePopUp.addEventListener('click', () => {
@@ -51,8 +59,15 @@ export default class PopUpAddNote extends NotesHeandler {
                  }
       
       this.addNote(note);
-    })
+    });
+    document.addEventListener('click', (e) => {
+      if (this.isOpen()) {
+        this.closePopUp();
+      }
+    });
+    this.formAddNote.addEventListener('click', (e) => {
+      // Останавливаем всплытия, чтобы клик по форме не закрывал pop-up
+      e.stopPropagation();
+    });
   }
 }
-
-

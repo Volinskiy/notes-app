@@ -1,11 +1,13 @@
 import './main-nav.less';
+import CallbackTools from '../../modules/callbackTools.js';
 
-export default class MainMenu {
+export default class MainMenu extends CallbackTools{
   constructor(){
-   this.mainMenuContainer = document.querySelector('.jsMainMenu');
-   this.buttonBurger = this.mainMenuContainer.querySelector('.jsButtonBurger');
-   this.menuList = this.mainMenuContainer.querySelector('.jsMainMenuList');
-   this.initEventHandlers();
+    super();
+    this.mainMenuContainer = document.querySelector('.jsMainMenu');
+    this.buttonBurger = this.mainMenuContainer.querySelector('.jsButtonBurger');
+    this.menuList = this.mainMenuContainer.querySelector('.jsMainMenuList');
+    this.initEventHandlers();
   }
 
   openMenu(){
@@ -28,8 +30,17 @@ export default class MainMenu {
   }
 
   initEventHandlers(){
-    this.buttonBurger.addEventListener('click', () => {
+    this.buttonBurger.addEventListener('click', (e) => {
+      // Останавливаем всплытие, чтобы клик по кнопке открытия меню не закрывал меню
+      e.stopPropagation();
       this.toggleMenu();
-    })
+    });
+    document.addEventListener('click', (e) => {
+      this.closeMenu();
+    });
+    this.menuList.addEventListener('click', (e) => {
+      // Останавливаем всплытие, чтобы клик по меню не закрывал меню
+      e.stopPropagation();
+    });
   }
 }
